@@ -1,0 +1,111 @@
+package com.example.ugex_deer
+//programa que te ayuda a saber cuanto tiempo te llevaria pagar una deuda, poniendo
+//un billete de esa denominacion cada segundo en la mesa.
+//escribe la cantidad de la deuda y la denominacion del billete Ej: cuantos(36000,1000)
+fun main(){
+
+   desgloce()
+}
+
+fun desgloce() {
+
+
+  val valMin: Int = 60
+  val valHour: Int = 60 * valMin
+  val valDia: Int = 24 * valHour
+
+  cuantos(1062447000000,1000)
+
+}
+
+// segundos
+
+  fun cuantos(segundos: Long, valBille:Int) {
+
+    var segundos=segundos/valBille
+
+   // println("La divicion fue $segundos")
+
+    if (segundos <= 60) {
+      println("Son $segundos segundos")
+
+      // minutos
+
+    } else if (segundos > 60 && segundos <= 3600) {
+      var totMinu = segundos / 60
+      var totSeg = segundos % 60
+      println("son exactamente $totMinu minutos")
+      println("con $totSeg segundos")
+
+      // horas
+
+    } else if (segundos > 3600 && segundos <= 86400) {
+      var totHour = segundos / 3600
+      var restas = segundos % 3600
+      var totMinu = restas / 60
+      var totSeg = restas % 60
+
+
+      println("son exactamente $totHour horas")
+      println(" $totMinu minutos")
+      println(" $totSeg segundos")
+
+      // dias
+
+    } else if (segundos > 86400 && segundos <= 2678400) {
+
+      var totDias = segundos / 86400
+      var restas = segundos % 86400
+      var totHours = restas / 3600
+      var totMinus = restas % 3600
+      var totMin = totMinus / 60
+      var totSec = totMinus % 60
+
+
+      println("son exactamente $totDias dias")
+      println(" $totHours Horas")
+      println(" $totMin minutos")
+      println(" $totSec segundos")
+
+// meses
+
+    } else if (segundos > 2678400 && segundos <= 32140800) {
+
+      var totMes = segundos / 2678400
+      var restas = segundos % 2678400
+      var totDias = restas / 86400
+      var totHoras = restas % 86400
+      var totHours = totHoras / 3600
+      var totMinus = totHoras % 3600
+      var totMin1 = totMinus / 60
+      var totSec = totMinus % 60
+
+
+      println("son exactamente $totMes meses ")
+      println(" $totDias Dias")
+      println(" $totHours Horas")
+      println(" $totMin1 minutos")
+      println(" $totSec segundos")
+//anual
+    } else if (segundos > 32140800 && segundos <= 32140800000) {
+
+      var totYear = segundos / 32140800
+      var restas = segundos % 32140800
+      var totMes = restas / 2678400
+      var totMes1 = restas % 2678400
+      var totDias = totMes1 / 86400
+      var totHoras = totMes1 % 86400
+      var totHours = totHoras / 3600
+      var totMinus = totHoras % 3600
+      var totMin1 = totMinus / 60
+      var totSec = totMinus % 60
+
+
+      println("son exactamente $totYear años")
+      println(" $totMes Meses")
+      println(" $totDias Dias")
+      println(" $totHours Horas")
+      println(" $totMin1 minutos")
+      println(" $totSec segundos")
+    }
+  }
